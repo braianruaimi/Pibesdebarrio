@@ -42,7 +42,7 @@ export const CartSummary = ({
         aria-controls="floating-cart-panel"
       >
         <div>
-          <p className="section-label">Seleccionados</p>
+          <p className="section-label">TU PEDIDO</p>
           <p className="mt-1 text-lg font-black text-white">
             {itemsCount} item{itemsCount === 1 ? "" : "s"} · {formattedTotal}
           </p>
@@ -55,7 +55,7 @@ export const CartSummary = ({
       {isOpen ? (
         <div id="floating-cart-panel" className="floating-cart-panel mt-3">
           <div>
-            <p className="section-label">Resumen de carrito</p>
+            <p className="section-label">TOTAL A PAGAR</p>
             <p className="mt-2 text-3xl font-black text-white">{formattedTotal}</p>
             <p className="mt-2 text-sm text-[#d0d0d0]">{getCartSummaryText(itemsCount)}</p>
           </div>
@@ -124,10 +124,13 @@ export const CartSummary = ({
           <button
             type="button"
             onClick={onCheckout}
-            className="neon-button mt-4 w-full border border-[#ff3b30]/40 px-6 py-4 tracking-[0.22em] hover:shadow-[0_0_40px_rgba(255,59,48,0.45)]"
+            className="neon-button mt-4 w-full border border-[var(--neon-gold)] bg-[var(--neon-gold)] px-6 py-4 text-black font-black tracking-[0.22em] hover:bg-[var(--neon-gold-true)] hover:border-[var(--neon-gold-true)] hover:shadow-[0_0_40px_var(--neon-gold)]"
           >
-            Finalizar Compra
+            CONFIRMAR PEDIDO POR WHATSAPP
           </button>
+          <p className="mt-3 text-xs text-[var(--neon-gold)] text-center font-bold">
+            ¡Te hablamos al toque para coordinar la entrega en Ensenada o donde vos nos digas !!
+          </p>
         </div>
       ) : null}
     </aside>

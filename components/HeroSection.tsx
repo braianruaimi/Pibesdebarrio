@@ -6,22 +6,18 @@ const communityLink =
 export const HeroSection = () => {
   const storeWhatsAppLink = getStoreWhatsAppLink();
 
+
   return (
     <section className="page-container hero-section">
       <div className="mx-auto flex max-w-3xl flex-col items-center text-center">
-        <span className="neon-pill">Streetwear con identidad de barrio</span>
+        <span className="neon-pill">PibesDeBarrio</span>
         <h1 className="hero-title">PibesDeBarrio</h1>
-        <p className="hero-copy">
-          Prendas urbanas con energía nocturna, actitud callejera y lanzamientos pensados para destacar desde el primer scroll.
-        </p>
-        <p className="hero-note">Compra directa. Sin login. Sin fricción.</p>
-
         <div className="mt-8 flex w-full flex-col gap-3 sm:w-auto sm:flex-row">
           <a
             href="#productos"
-            className="neon-button border border-[#ff3b30]/50 px-7 tracking-[0.24em] hover:shadow-[0_0_45px_rgba(255,59,48,0.5)]"
+            className="neon-button border border-[var(--neon-gold)] px-7 tracking-[0.24em] text-black bg-[var(--neon-gold)] hover:bg-[var(--neon-gold-true)] hover:shadow-[0_0_45px_var(--neon-gold)]"
           >
-            Ver Productos
+            SUMATE A LA MOVIDA
           </a>
         </div>
       </div>

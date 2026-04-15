@@ -14,11 +14,11 @@ export const CatalogSection = ({
     <section id="productos" className="page-container pb-20">
       <div className="mb-8 flex flex-col gap-3 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
         <div className="section-stack">
-          <p className="section-label tracking-[0.35em]">Catalogo editable</p>
-          <h2 className="section-title">Productos destacados</h2>
+          <p className="section-label tracking-[0.35em]">LA MERCH DEL BARRIO</p>
+          <h2 className="section-title">LA MERCH DEL BARRIO</h2>
         </div>
         <p className="section-copy max-w-xl">
-          Agregá o editá productos desde data/products.ts y mantené la compra directa por WhatsApp, sin registro ni pasos extra.
+          Sumate a la movida y llevate algo que represente la esencia de los pibes. No es solo merch, es identidad. Elegí lo que más te cope y unite a la familia.
         </p>
       </div>
 

@@ -4,6 +4,8 @@ export interface Product {
   price: number;
   image: string;
   category: "buzo" | "remera" | "vaso" | "accesorio";
+  stock?: number;
+  limitedEdition?: boolean;
 }
 
 export const products: Product[] = [
@@ -14,6 +16,8 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1503341504253-dff4815485f1?auto=format&fit=crop&w=1200&q=80",
     category: "buzo",
+    stock: 3,
+    limitedEdition: false,
   },
   {
     id: "2",
@@ -22,6 +26,8 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?auto=format&fit=crop&w=1200&q=80",
     category: "remera",
+    stock: 12,
+    limitedEdition: false,
   },
   {
     id: "3",
@@ -30,6 +36,8 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1514228742587-6b1558fcf93a?auto=format&fit=crop&w=1200&q=80",
     category: "vaso",
+    stock: 2,
+    limitedEdition: true,
   },
   {
     id: "4",
@@ -38,6 +46,8 @@ export const products: Product[] = [
     image:
       "https://images.unsplash.com/photo-1521369909029-2afed882baee?auto=format&fit=crop&w=1200&q=80",
     category: "accesorio",
+    stock: 1,
+    limitedEdition: true,
   },
 ];
 

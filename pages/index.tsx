@@ -83,7 +83,7 @@ const HomePage: NextPage = () => {
           name="description"
           content="Streetwear de barrio con compra directa por WhatsApp y experiencia mobile-first."
         />
-        <meta name="theme-color" content="#050505" />
+        <meta name="theme-color" content="#0f172a" />
         <link rel="manifest" href="manifest.webmanifest" />
         <link rel="apple-touch-icon" href="icons/icon-192.svg" />
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -96,7 +96,7 @@ const HomePage: NextPage = () => {
 
       <main className="page-shell">
         <div className="relative isolate">
-          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(255,59,48,0.28),_transparent_32%),radial-gradient(circle_at_80%_20%,_rgba(140,140,140,0.22),_transparent_24%),linear-gradient(180deg,_#080808_0%,_#050505_100%)]" />
+          <div className="absolute inset-0 -z-10 bg-[radial-gradient(circle_at_top,_rgba(255,59,48,0.2),_transparent_30%),radial-gradient(circle_at_80%_20%,_rgba(148,163,184,0.16),_transparent_24%),linear-gradient(180deg,_#111827_0%,_#0f172a_100%)]" />
           <div className="absolute left-1/2 top-0 -z-10 h-72 w-72 -translate-x-1/2 rounded-full bg-[#ff3b30]/20 blur-3xl" />
 
           <HomeHeader cartCount={cartCount} />
@@ -112,6 +112,8 @@ const HomePage: NextPage = () => {
           />
           <FloatingActions />
           <CatalogSection products={products} onAddToCart={addToCart} />
+
+          {/* Sobre Nosotros ahora es modal en el header */}
         </div>
       </main>
     </>

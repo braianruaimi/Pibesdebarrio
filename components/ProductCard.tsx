@@ -2,7 +2,7 @@ import type { Product } from "../data/products";
 import { sendProductWhatsAppMessage } from "../services/whatsapp";
 import { formatCurrency } from "../utils/currency";
 
-type ProductCardProps = Pick<Product, "name" | "price" | "image"> & {
+type ProductCardProps = Pick<Product, "name" | "price" | "image" | "stock" | "limitedEdition"> & {
   onAddToCart: () => void;
 };
 
@@ -10,18 +10,25 @@ export const ProductCard = ({
   name,
   price,
   image,
+  stock,
+  limitedEdition,
   onAddToCart,
 }: ProductCardProps) => {
   const formattedPrice = formatCurrency(price);
 
   return (
-    <article className="glass-card group overflow-hidden rounded-3xl p-4 hover:-translate-y-1 hover:border-[#ff3b30]/70 hover:bg-white/10">
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30">
+    <article className="glass-card group overflow-hidden rounded-3xl p-4 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10 hover:shadow-[0_18px_45px_rgba(15,23,42,0.55)]">
+      <div className="overflow-hidden rounded-2xl border border-white/10 bg-black/30 relative">
         <img
           src={image}
           alt={name}
           className="h-64 w-full object-cover transition duration-500 group-hover:scale-105 sm:h-72"
         />
+        {(limitedEdition || (typeof stock === "number" && stock <= 3)) && (
+          <span className="absolute top-3 left-3 rounded-full bg-[var(--neon-gold)] px-4 py-1 text-xs font-black uppercase tracking-widest text-black shadow-[0_0_12px_var(--neon-gold)]">
+            {limitedEdition ? "EDICIÓN LIMITADA" : "QUEDAN POCOS"}
+          </span>
+        )}
       </div>
 
       <div className="mt-5 space-y-4">
@@ -42,9 +49,9 @@ export const ProductCard = ({
           <button
             type="button"
             onClick={onAddToCart}
-            className="inline-flex w-full items-center justify-center rounded-2xl border border-white/15 bg-white/5 px-4 py-3 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-white transition-all duration-300 hover:scale-[1.02] hover:border-[#ff6b63]/60 hover:bg-white/10 focus:outline-none focus:ring-2 focus:ring-[#ff3b30]/40"
+            className="inline-flex w-full items-center justify-center rounded-2xl border border-[var(--neon-gold)] bg-[var(--neon-gold)] px-4 py-3 text-center text-sm font-extrabold uppercase tracking-[0.18em] text-black transition-all duration-300 hover:scale-[1.02] hover:bg-[var(--neon-gold-true)] hover:border-[var(--neon-gold-true)] focus:outline-none focus:ring-2 focus:ring-[var(--neon-gold)] shadow-[0_0_18px_var(--neon-gold)]"
           >
-            Agregar al carrito
+            LO QUIERO TENER
           </button>
         </div>
       </div>
