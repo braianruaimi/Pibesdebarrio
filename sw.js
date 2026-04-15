@@ -1,6 +1,5 @@
-const CACHE_NAME = "pibesdebarrio-static-v2";
+const CACHE_NAME = "pibesdebarrio-static-v3";
 const CORE_ASSETS = ["./", "./manifest.webmanifest"];
-const STATIC_DESTINATIONS = new Set(["style", "script", "image", "font", "worker"]);
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
@@ -50,40 +49,12 @@ self.addEventListener("fetch", (event) => {
       fetch(event.request).catch(() => caches.match("./")),
     );
 
-    return;
-  }
+      return;
+    }
 
-  if (!STATIC_DESTINATIONS.has(event.request.destination)) {
-    return;
-  }
-
-  event.respondWith(
-    caches.match(event.request).then((cachedResponse) => {
-      if (cachedResponse) {
-        fetch(event.request)
-          .then((networkResponse) => {
-            if (!networkResponse || networkResponse.status !== 200) {
-              return;
-            }
-
-            const responseClone = networkResponse.clone();
-            caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
-          })
-          .catch(() => undefined);
-
-        return cachedResponse;
-      }
-
-      return fetch(event.request).then((networkResponse) => {
-        if (!networkResponse || networkResponse.status !== 200) {
-          return networkResponse;
-        }
-
-        const responseClone = networkResponse.clone();
-        caches.open(CACHE_NAME).then((cache) => cache.put(event.request, responseClone));
-
-        return networkResponse;
-      });
-    }),
-  );
+    if (requestUrl.pathname.endsWith("/manifest.webmanifest")) {
+      event.respondWith(
+        caches.match(event.request).then((cachedResponse) => cachedResponse || fetch(event.request)),
+      );
+    }
 });
