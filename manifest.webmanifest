@@ -4,8 +4,8 @@
   "description": "Streetwear de barrio con compra directa por WhatsApp.",
   "start_url": ".",
   "display": "standalone",
-  "background_color": "#050505",
-  "theme_color": "#050505",
+  "background_color": "#0f172a",
+  "theme_color": "#0f172a",
   "icons": [
     {
       "src": "icons/icon-192.svg",
