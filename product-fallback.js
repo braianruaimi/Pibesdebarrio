@@ -129,7 +129,7 @@
 
     shell.innerHTML =
       '<button type="button" data-pdb-cart-toggle="1" style="width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid rgba(255,255,255,.12);border-radius:24px;background:#0b0b0b;color:#fff;padding:16px 18px;box-shadow:0 20px 40px rgba(0,0,0,.35);cursor:pointer">' +
-      '<div style="text-align:left"><p style="margin:0;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#ffd700">TU PEDIDO</p><p style="margin:6px 0 0;font-size:18px;font-weight:900">' + itemCount + ' item' + (itemCount === 1 ? '' : 's') + ' Â· ' + total + '</p></div>' +
+      '<div style="text-align:left"><p style="margin:0;font-size:11px;font-weight:800;letter-spacing:.24em;text-transform:uppercase;color:#ffd700">TU PEDIDO</p><p style="margin:6px 0 0;font-size:18px;font-weight:900">' + itemCount + ' item' + (itemCount === 1 ? '' : 's') + ' · ' + total + '</p></div>' +
       '<span style="min-width:42px;text-align:center;border-radius:999px;background:rgba(255,255,255,.08);padding:8px 10px;font-weight:900">' + (cartExpanded ? '-' : itemCount) + '</span>' +
       '</button>';
 
@@ -150,7 +150,7 @@
         row.innerHTML =
           '<div style="display:flex;justify-content:space-between;gap:12px;align-items:flex-start">' +
           '<div><p style="margin:0;font-size:16px;font-weight:900">' + item.product.name + '</p><p style="margin:8px 0 0;font-size:13px;color:#ff8b84">' + moneyFormatter.format(item.product.price * item.quantity) + '</p></div>' +
-          '<button type="button" data-pdb-cart-remove="' + item.product.id + '" style="height:32px;width:32px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-weight:900;cursor:pointer">Ã—</button>' +
+          '<button type="button" data-pdb-cart-remove="' + item.product.id + '" style="height:32px;width:32px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-weight:900;cursor:pointer">×</button>' +
           '</div>' +
           '<div style="margin-top:12px;display:flex;align-items:center;gap:8px">' +
           '<button type="button" data-pdb-cart-minus="' + item.product.id + '" style="height:32px;width:32px;border-radius:999px;border:1px solid rgba(255,255,255,.12);background:rgba(255,255,255,.05);color:#fff;font-weight:900;cursor:pointer">-</button>' +

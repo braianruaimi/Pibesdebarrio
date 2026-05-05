@@ -1,7 +1,7 @@
 {
   "name": "PibesDeBarrio",
-  "short_name": "Pibes",
-  "description": "Streetwear de barrio con compra directa por WhatsApp.",
+  "short_name": "PDB",
+  "description": "Landing e-commerce mobile-first de PibesDeBarrio con compra directa por WhatsApp y soporte PWA.",
   "start_url": "/pibesdebarrio/",
   "scope": "/pibesdebarrio/",
   "display": "standalone",
@@ -11,13 +11,13 @@
   "theme_color": "#0f172a",
   "icons": [
     {
-      "src": "icons/icon-192.svg",
+      "src": "/icons/icon-192.svg",
       "sizes": "192x192",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "icons/icon-512.svg",
+      "src": "/icons/icon-512.svg",
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"

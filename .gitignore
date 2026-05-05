@@ -1,0 +1,5 @@
+.localtest/
+.vscode/
+node_modules/
+.next/
+out/
